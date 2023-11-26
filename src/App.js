@@ -24,6 +24,12 @@ function App() {
   function handleItem(item) {
     setItem([...items, item]);
   }
+
+  function clearList() {
+    const confirm = window.confirm("Are you sure you wanna clear the list?");
+
+    confirm && setItem([]);
+  }
   // _______________________component starts here____________________________
   return (
     <div className="app">
@@ -34,6 +40,7 @@ function App() {
         setItem={setItem}
         Toggle={handleToggle}
         handleClick={handleClick}
+        clearList={clearList}
       />
       <States items={items} />
     </div>

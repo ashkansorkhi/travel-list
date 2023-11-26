@@ -4,11 +4,15 @@ export default function States({ items }) {
   const persentage = Math.round((packedItems / items.length) * 100);
   return (
     <footer className="stats">
-      <em>
-        {" "}
-        You have {items.length} items on your list, and you already packed{" "}
-        {packedItems} ({persentage} %)
-      </em>
+      {items.length >= 1 ? (
+        <em>
+          {" "}
+          You have {items.length} items on your list, and you already packed{" "}
+          {packedItems} ({persentage} %)
+        </em>
+      ) : (
+        <em>ADD your items and Pack! </em>
+      )}
     </footer>
   );
 }
